@@ -1,14 +1,41 @@
-:root {
-    --bkg-color: #F9F9F9;
-    --text-color: black;
-    --prim-color: lavender;
-    --sec-color: teal;
+
+    body {
+        --bkg-color: #f6f7eb;
+        --text-color: black;
+        --prim-color: #e94f37;
+        --sec-color: #393e41;
+        --box-shadow: rgba(0,0,0,0.2);
+    }
+    body.dark-theme {
+        --bkg-color: #121212;
+        --text-color: white;
+        --prim-color: #1c2541;
+        --sec-color: #3a506b;
+        --box-shadow: rgba(255, 255, 255, 0.2);
+    }
+
+@media (prefers-color-scheme: dark) {
+    body.light-theme {
+        --bkg-color: #f6f7eb;
+        --text-color: black;
+        --prim-color: #e94f37;
+        --sec-color: #393e41;
+        --box-shadow: rgba(0,0,0,0.2);
+    }
+    body {
+        --bkg-color: #121212;
+        --text-color: white;
+        --prim-color: #1c2541;
+        --sec-color: #3a506b;
+        --box-shadow: rgba(255, 255, 255, 0.2);
+    }
 }
 
 body {
     background-color: var(--bkg-color);
     color: var(--text-color);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     height: 100vh;
 }
@@ -18,6 +45,8 @@ main, header{
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     max-width: 80vmax;
 }
 
@@ -26,13 +55,21 @@ header {
     color: var(--text-color);
     width: 100vw;
     display: flex;
-    max-height: 40px;
+    max-height: 50px;
+}
+
+button {
+    background-color: var(--sec-color);
+}
+
+nav {
+    display: flex;
 }
 
 .h1-wrap, .main-card {
     border: 2px solid 0.7;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 var(--box-shadow);
     margin: 1rem;
 }
 
@@ -41,14 +78,16 @@ header {
 }
 
 .main-card {
+    display: flex;
     padding: 10px 15px;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-shrink: 1;
-    padding: 10px 15px;
+    display: grid;
+    gap: 20px;
+    
+    grid-template-columns: auto auto;
+    justify-content: center;
 }
 
 .h1-wrap:hover, .main-card:hover, .sub-card:hover {
@@ -56,8 +95,7 @@ header {
 }
 
 .sub-card {
-    width: 30%;
-    padding: 5px 5px;
+    padding: 10px 5px;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     margin: 10px;
@@ -116,4 +154,35 @@ header {
     display: inline-block;
     height: 20px;
     width: 20px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        font-size: 20px;
+    }
+
+    header {
+        font-size: 30px;
+    }
 }
