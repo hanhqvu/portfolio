@@ -9,8 +9,6 @@
 body {
     background-color: var(--bkg-color);
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
     margin: 0;
     height: 100vh;
 }
@@ -22,7 +20,7 @@ main, header{
 main {
     display: flex;
     flex-direction: column;
-    max-width: 70vmax;
+    justify-content: space-evenly;
 }
 
 header {
@@ -34,7 +32,9 @@ header {
 }
 
 h1 {
-    border-bottom: 0.1em solid var(--prim-color);
+    text-decoration: underline;
+    text-decoration-color: var(--prim-color);
+    text-underline-offset: 5px;
 }
 
 .menu-wrap {
@@ -87,37 +87,51 @@ h1 {
     margin: 0 5px;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+.card {
+    padding: 1.5rem;
 }
 
 @media screen and (max-width: 500px) {
     body {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     header {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+    main {
+        width: 100vw;
     }
 }
 
 @media screen and (min-width: 481px) {
     body {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     header {
         font-size: 1.5rem;
+    }
+    main {
+        width: 70vw;
     }
 }
 
 @media screen and (min-width: 769px) {
     body {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     header {
         font-size: 1.5rem;
+    }
+    main {
+        max-width: 40vw;
     }
 }
