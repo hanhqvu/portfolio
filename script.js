@@ -1,12 +1,7 @@
-// const themeBtn = document.getElementById("theme-toggle");
-// const isDarkMode = document.body.classList.contains("dark-theme");
-// themeBtn.addEventListener("click", () => {
-//     if (isDarkMode) {
-//         document.body.classList.remove("dark-theme");
-//         document.body.classList.add("light-theme");
-//         }
-//     else {
-//         document.body.classList.add("dark-theme");
-//         document.body.classList.remove("light-theme");
-//     }
-// });
+showMenu = () => {
+    const mobileNav = document.querySelector("#mobile-menu");
+    if (mobileNav.style.display === "block") {
+        mobileNav.style.display = "none";
+    }
+    else mobileNav.style.display = "block";
+}
