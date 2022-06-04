@@ -160,6 +160,9 @@ h1 {
 }
 
 @media (max-width: 500px) {
+    body {
+        font-size: 1.2rem;
+    }
     header {
         height: 5vh;
         justify-content: right;
@@ -187,7 +190,10 @@ h1 {
     main {
         width: 600px;
     }
+}
+
+@media (min-width: 769px) {
     body {
-        font: 2rem;
+        font-size: 2rem;
     }
 }
